@@ -186,7 +186,7 @@
    * **`InMemoryOrderModuleList`(Offset 0x20)** เรียงตามลำดับตำแหน่งในหน่วยความจำ
    * **`InInitializationOrderModuleList` (Offset 0x30)** เรียงตามลำดับการรันฟังก์ชัน Initialize
 
-![](../zPhoto_bin/Pasted%20image%2020260329032454.png)
+![](../Pasted%20image%2020260329032454.png)
    
    ภาพ: เส้นทางของการเข้าถึง Double Linked List LDR Module structure
    
@@ -199,13 +199,13 @@
    
    * 3. ใช้ Function การเปรียบเทียบว่าภายใน Field ที่ชื่อ `InLoadOrderModuleList` ด้วย แต่เราจะลงเพียง Logic การหา Native DLL base เท่านั้น
 
-   ![](../zPhoto_bin/Pasted%20image%2020260329001248.png)
+   ![](../Images/Pasted%20image%2020260329001248.png)
    
    ภาพ: Code Snippet หา `NtDllBase` Address 
    
    **ขั้นตอน 3 คือ การดึงข้อมูลจาก PE Header** หลังจากที่เราได้ `DllBase` ของ `ntdll.dll` มาเป็นสารตั้งต้นจากขั้นตอนก่อนหน้าแล้ว เป้าหมายต่อไปคือการชำแหละโครงสร้างไฟล์ PE ใน Memory เพื่อเข้าไปหา NT Header ซึ่งเป็นจุดศูนย์กลางที่จะพาเราไปสู่ Export Directory ต่อไป
    
-![](../zPhoto_bin/Pasted%20image%2020260329011846.png)
+![](../Images/Pasted%20image%2020260329011846.png)
    
    จากในภาพ Code snippet การทำงานของฟังก์ชัน `getNtHeader` เราจะเห็น Logic การเดินตามโครงสร้างดังนี้
 
@@ -218,7 +218,7 @@
    เมื่อผ่านเงื่อนไขการตรวจสอบทั้งหมด ฟังก์ชันก็จะคืนค่า Pointer ที่ชี้ไปยังโครงสร้าง NT Header ซึ่งพร้อมให้เรานำไปเจาะหา `OptionalHeader` และ `DataDirectory` ในขั้นตอนต่อไป 
 
 
-![](../zPhoto_bin/Pasted%20image%2020260329012735.png)
+![](../Images/Pasted%20image%2020260329012735.png)
    
    ภาพ: การเข้าถึง Export Directory
 
@@ -244,7 +244,7 @@
    
    ข้อดีของการใช้ struct แบบนี้คือเราสามารถเก็บผลลัพย์จากการเข้าไปดึงข้อมูลฟังก์ชันทั้งหมดและดึงออกมาใช้งานได้เลยผ่านการนิยามตัวแปรตัวแทนแบบเป็น Pointer (เรียกว่า Pass by Pointer) ซึ่งในทาง Performance นั้น เราเพียงแค่ชี้ไปหาตำแหน่งจริงของ Struct แล้วเรียกใช้งาน แทนที่จะต้องทำการคำนวณ Offset ใหม่ทุกครั้งที่เราจะหาฟังก์ชันมาใช้ แถมยังลดความซับซ้อนของ Code ลงไปได้ด้วย 
 
-![](../zPhoto_bin/Pasted%20image%2020260329012943.png)
+![](../Images/Pasted%20image%2020260329012943.png)
    
    ภาพ: การ typedef struct เก็บข้อมูลตาราง Export 
 
@@ -252,7 +252,7 @@
 
    **อ่านต่อได้ที่บทความนี้** [SSN Resolution Algorithm](SSN%20Resolution%20Algorithm.md)
    
-![](../zPhoto_bin/Pasted%20image%2020260329034353.png)
+![](../Images/Pasted%20image%2020260329034353.png)
    
    ภาพ: 4 จตุ Algorithm สำหรับการหา SSN 
 
@@ -285,7 +285,7 @@
 #### 3. Register Preparation 
 จัดเตรียมพารามิเตอร์ลงใน CPU Registers (`rcx`, `rdx`, `r8`, `r9`, `r10`) และนำเลข SSN ใส่ใน `eax` ตามมาตรฐานของ Windows x64 Calling Convention
 
-![](../zPhoto_bin/Pasted%20image%2020260329234851.png)
+![](../Images/Pasted%20image%2020260329234851.png)
    
    ภาพ: การเขียน Assembly Stub แบบ Intel Syntax ด้วยรูปแบบ Generic 
  
@@ -320,7 +320,7 @@
 #### 4. Wrapper Function
 Wrapper ตัวนี้เป็นด่านจัดระเบียบข้อมูลก่อนลงลึกสู่ Assembly เพื่อรับประกัน **ความเร็วและความปลอดภัยใน System Memory** มีหัวใจสำคัญดังนี้
 
-![](../zPhoto_bin/Pasted%20image%2020260330001845.png)
+![](../Images/Pasted%20image%2020260330001845.png)
 
 ภาพ: Wrapper Function ของ `NtAllocateVirtualMemory`
 
@@ -333,7 +333,7 @@ Wrapper ตัวนี้เป็นด่านจัดระเบียบ
 #### 5. Cleanup
 การเรียกใช้ `MyNtFreeVirtualMemory` ในตอนท้ายของโปรแกรม ต้องทำเพื่อเป็นการเคลียร์ร่องรอยการจอง Memory ที่ทำไปในตอนแรก ทำให้ไม่มี Memory trace หลังช่วง Post-Exploitation ช่วยให้ตัว Shellcode ของเรารอดจากการตรวจจับมากขึ้นในทางอ้อม
 
-![](../zPhoto_bin/Pasted%20image%2020260330001939.png)
+![](../Images/Pasted%20image%2020260330001939.png)
 
 ภาพ: การทำ Cleanup โดยใช้ทั้ง `NtFreeVirtualMemory`
 
@@ -345,7 +345,7 @@ Wrapper ตัวนี้เป็นด่านจัดระเบียบ
 
    - การเช็คเงื่อนไข `if (statusFree == 0)` เป็นการรับประกัน Stability ของโปรแกรม หากการลบหน่วยความจำสำเร็จ โปรแกรมจะจบการทำงานโดยไม่เกิด Error โยนกลับไปที่ OS ซึ่งเป็นการหลีกเลี่ยงการกระตุ้น Behavioral Analytics ของ EDR ที่มักจะจับตามอง Process ที่มีพฤติกรรม Crash หรือ Terminate แบบผิดปกติ
 
-![](../zPhoto_bin/Pasted%20image%2020260330002254.png)
+![](../Images/Pasted%20image%2020260330002254.png)
 
 ภาพ: การใช้ฟังก์ชัน `WaitForSingleObject` และ `CloseHandle`
 

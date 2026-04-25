@@ -83,7 +83,7 @@ EDR ก็คือการนำการตรวจจับจาก Signat
 
 ถ้าตรวจสอบ Telemetry แล้วผ่าน EDR ก็จะให้ `Syscall` ข้ามไปฝั่ง Kernel (Ring 0) แล้วเรียกใช้งาน หากไม่ผ่าน Process ที่เรียกฟังก์ชันก็จะถูก Terminate ทันที นี้เป็นเพียง Behavior Analysis เบื้องต้นเท่านั้น ดูภาพประกอบด้านล่าง
 
-![](../zPhoto_bin/Pasted%20image%2020260326014828.png)
+![](../Images/Pasted%20image%2020260326014828.png)
 
 ภาพจาก: https://www.ctfiot.com/99993.html
 
@@ -96,7 +96,7 @@ EDR ก็คือการนำการตรวจจับจาก Signat
 
 หาก EDR เห็นว่า `syscall` ถูกเรียกมาจาก Memory ที่ไม่มีที่มาที่ไป ไม่ได้มาจาก Disk หรือไฟล์ในเครื่อง แบบจู่ ๆ คำสั่งก็โผล่ขึ้นมากลาง RAM หรือที่ภาษาเทคนิคเรียกกันว่า Unbacked Memory และ Memory ที่ Protection สิทธิจัดการไฟล์เป็น `RWX` (Read-Write-Execute) มันจะส่งสัญญาณเตือนทันที
 
-![](../zPhoto_bin/Pasted%20image%2020260417005221.png)
+![](../Images/Pasted%20image%2020260417005221.png)
 
 ภาพ: หลักการทำงานของ Kernel Callbacks & `ETW-Ti`
 
@@ -198,7 +198,7 @@ EDR สมัยใหม่มีการทำ Heuristic scan หรือก
  
 - การทำ Stack Walking คือการที่ EDR เดินสวนทางจาก **บนลงล่าง** ผ่าน Register ที่เรียกว่า RIP (Instruction Pointer) ซึ่งมีหน้าที่ชี้ไปที่ **Code Segment** หรือ "หน่วยความจำส่วนที่เก็บชุดคำสั่งโปรแกรม" แล้วไล่ตรวจสอบไปเรื่อย ๆ หากคำสั่งที่มีที่มาจาก Malware ที่ไม่มีการทำ `OpSec` หรือใช้เทคนิคที่ไม่รัดกุมมากพอ เช่น ไม่มีการ Obfuscation ลำดับการใช้งาน Register (ตรวจด้วย Code Pattern) ก็จะพบว่ามันมีลักษณะของ Unbacked Memory แบบที่เราคุยกันไปนั้นเอง
 
-![](../zPhoto_bin/Pasted%20image%2020260326020231.png)
+![](../Images/Pasted%20image%2020260326020231.png)
 
 ภาพจาก: https://mattwarren.org/2019/01/21/Stackwalking-in-the-.NET-Runtime/
 
