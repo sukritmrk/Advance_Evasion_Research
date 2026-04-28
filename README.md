@@ -17,14 +17,16 @@
 
 ## Build
 
-- **Compiler** Visual Studio 2022 (v143)
+**Compiler** 
+- Visual Studio 2022 (v143)
     
-- **Programming Language**
+**Programming Language**
 - ISO C++20
 - x64 Assembly
 - LLVM (Clang-Cl)
     
-- **Architecture** Windows x64
+**Architecture** 
+- Windows x64
 
 ---
 
@@ -33,4 +35,4 @@
 รายละเอียดเชิงลึกเกี่ยวกับที่มาที่ไป, Logic การออกแบบ, ขั้นตอนการพัฒนา และผลการวิเคราะห์ผ่าน Debugger (x64dbg/WinDbg) สามารถอ่านต่อได้ที่รายงานฉบับสมบูรณ์ด้านล่างนี้
 
 
-🔗 [Read Full Technical Report]
+🔗 [Read Full Technical Report](dddd)
