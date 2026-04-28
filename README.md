@@ -1,4 +1,4 @@
-## Disclaimer: This project is for educational and security research purposes only. The author is not responsible for any misuse of this tool.
+## Disclaimer: This project is for educational and security research purposes only, the author is not responsible for any misuse of this tool.
 คำเตือน: โปรเจคนี้มีไว้เพื่อจุดประสงค์ทางการศึกษาและการวิจัยเท่านั้น ผู้เขียนไม่ขอรับผิดชอบในทุกกรณีหากมีการนำเนื้อหาไปใช้ในทางที่ผิด.
 
 # Modern Windows Loader PoC Research
