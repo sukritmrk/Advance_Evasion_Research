@@ -59,3 +59,4 @@ extern "C" NTSTATUS NtAlloc(DWORD dwSSN, ULONG_PTR pGadget, ...);
 extern "C" NTSTATUS NtWrite(DWORD dwSSN, ULONG_PTR pGadget, ...);
 extern "C" NTSTATUS NtProtect(DWORD dwSSN, ULONG_PTR pGadget, ...);
 extern "C" NTSTATUS NtCreate(DWORD dwSSN, ULONG_PTR pGadget, ...);
+extern "C" NTSTATUS NtFree(DWORD dwSSN, ULONG_PTR pGadget, ...);
