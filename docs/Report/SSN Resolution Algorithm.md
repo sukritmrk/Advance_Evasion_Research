@@ -3,7 +3,7 @@
 
 ลอจิกการทำงานแบ่งเป็นสเต็ปดังนี้
 
-![](../zPhoto_bin/Pasted%20image%2020260329225315.png)
+![](../Images/Pasted%20image%2020260329225315.png)
 
 ภาพ: Logic ของ Halo's Gate Algorithm
 
@@ -20,7 +20,7 @@
 ---
 ## 2.Halo's Gate Algorithm
 
-![](../zPhoto_bin/Pasted%20image%2020260329225358.png)
+![](../Images/Pasted%20image%2020260329225358.png)
 
 ภาพ: การกำหนดขอบเขตการ Sorting SSN
 
@@ -42,7 +42,7 @@
 
    **ผลลัพธ์ด้านประสิทธิภาพ (Performance Impact):** ทุกครั้งก่อนที่ลอจิกจะทำการสแกนหา Pattern โค้ดจะประเมินเงื่อนไข `if (pUpFunc > uiTextStart && pUpFunc < uiTextEnd)` เสมอ การตรวจสอบนี้เป็นเพียงการเปรียบเทียบตัวเลขใน CPU Register ซึ่งมีความเร็วระดับ Clock Cycle (Overhead ต่ำมาก) แต่สามารถรับประกันเสถียรภาพ (Stability) ของมัลแวร์ได้ 100% ว่าการสลับ Context เข้าสู่ Kernel จะทำงานได้อย่างราบรื่นและไม่เกิดอาการ Memory Leak หรือ Crash กลางอากาศ
    
-![](../zPhoto_bin/Pasted%20image%2020260329225421.png)
+![](../Images/Pasted%20image%2020260329225421.png)
 
 ภาพ: Logic หลักของ Halo's Gate Algorithm
 
@@ -65,19 +65,19 @@
 ---
 ## 3.Tartarus's Gate Algorithm
 
-![](../zPhoto_bin/Pasted%20image%2020260329232712.png)
+![](../Images/Pasted%20image%2020260329232712.png)
 
 ภาพ: การกำหนดขอบเขตการ Sorting SSN
 
    ในส่วนของการกำหนดขอบเขต เป็นโค๊ดชุดเดียวกันกับที่ถูกใช้งานใน Halo's Gate ดังนั้นเราจะข้ามการอธิบายไปสู่ส่วนถัดไป
 
-![](../zPhoto_bin/Pasted%20image%2020260329233106.png)
+![](../Images/Pasted%20image%2020260329233106.png)
 
 ภาพ: การกำหนดขอบเขตการ Sorting SSN
 
    แน่นอนว่า การใช้ Array ในการค้นหาชื่อของ SSN ของ Function ที่เราต้องการใช้ ก็ยังคงเป็นแบบเดิมกับที่ใช้ใน Halo's Gate  
 
-![](../zPhoto_bin/Pasted%20image%2020260329233226.png)
+![](../Images/Pasted%20image%2020260329233226.png)
 
 ภาพ: Logic ส่วนการตรวจสอบหา Signature Pattern ของ Sorting Neighbor SSN ด้านบน (Up) ของ SSN เป้าหมาย 
 
@@ -110,7 +110,7 @@
 
    - **ความเร็วและความปลอดภัย** การคำนวณทั้งหมดนี้ใช้ความซับซ้อนระดับ **O(1)** และเกิดขึ้นใน CPU Register ล้วนๆ ไม่มีการจองหน่วยความจำใหม่ หรือ Zero Allocation จึงป้องกันปัญหา Memory Leak และคงประสิทธิภาพระดับสูงสุดของระบบ System Memory ไว้ได้อย่างสมบูรณ์
 
-![](../zPhoto_bin/Pasted%20image%2020260329233757.png)
+![](../Images/Pasted%20image%2020260329233757.png)
    
    ภาพ: Logic ส่วนการตรวจสอบหา Signature Pattern ของ Sorting Neighbor SSN ด้านล่าง (Down) ของ SSN เป้าหมาย 
    
@@ -125,7 +125,7 @@
 ---
 ## 4.`FreshyCalls` Algorithm
 
-![](../zPhoto_bin/Pasted%20image%2020260329234047.png)
+![](../Images/Pasted%20image%2020260329234047.png)
 
    ภาพ: การค้นหา `"Zw"` หรือคำนำหน้าชื่อของฟังก์ชัน Native API และเริ่มการดึงรายชื่อ-จำนวน รวมถึง Address ของฟังก์ชันทั้งหมดที่เข้าข่ายมาเก็บไว้ใน Struct 
 
@@ -141,7 +141,7 @@
 
    ลอจิกชุดนี้มีความซับซ้อนเวลาเพียง O(N) ในการสแกน Export Table เป็นการแตะ System Memory เพียงแค่การอ่าน (Read-only) เท่าที่จำเป็น ถือเป็นการวางรากฐานข้อมูลที่รวดเร็วและปลอดภัย
 
-![](../zPhoto_bin/Pasted%20image%2020260329234108.png)
+![](../Images/Pasted%20image%2020260329234108.png)
    
    ภาพ: การจัดเรียงลำดับ Function ตามความมากน้อยของ Address
 
