@@ -355,4 +355,4 @@ Wrapper ตัวนี้เป็นด่านจัดระเบียบ
    - **`CloseHandle(hThread);`** เพื่อของความปลอดภัยของ System Memory ทันทีที่ Thread จบหน้าที่แล้ว การเรียกปิด Handle คือการตัดขาดการเชื่อมต่อระหว่าง Main Process กับ Thread นั้น เพื่อป้องกันปัญหา Handle Leak ตัว Loader จะคืนทรัพยากรให้ OS ทันที และเป็นการลบร่องรอยใน Handle Table ไม่ให้ EDR ใช้แกะรอยย้อนกลับได้
 
 ### อ่านผลการทดสอบได้ที่นี่
-### [Indirect Syscalls Result Tests](../Test%20Results/Indirect%20Syscalls%20Result%20Tests.md)
+### [Indirect Syscalls Result Tests](Test%20Results/Indirect%20Syscalls%20Result%20Tests.md)
