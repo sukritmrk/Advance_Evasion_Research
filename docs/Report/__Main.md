@@ -229,5 +229,5 @@ EDR สมัยใหม่มีการทำ Heuristic scan หรือก
 ---
 ### 3.ประสิทธิภาพของ `PoC` และ ผลการทดสอบของ 3 เทคนิค
 
-### [Indirect Syscalls Result Tests](Indirect%20Syscalls%20Result%20Tests.md)
+### [Indirect Syscalls Result Tests](../Test%20Results/Indirect%20Syscalls%20Result%20Tests.md)
 
