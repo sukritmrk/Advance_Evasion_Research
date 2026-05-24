@@ -32,7 +32,8 @@
 
 ## Documentation
 
-รายละเอียดเชิงลึกเกี่ยวกับที่มาที่ไป, Logic การออกแบบ, ขั้นตอนการพัฒนา และผลการวิเคราะห์ผ่าน Debugger (x64dbg/WinDbg) สามารถอ่านต่อได้ที่รายงานฉบับสมบูรณ์ด้านล่างนี้
+รายละเอียดเชิงลึกเกี่ยวกับที่มาที่ไป, Logic การออกแบบ, ขั้นตอนการพัฒนา และผลการวิเคราะห์ผ่าน Debugger สามารถอ่านต่อได้ที่รายงานฉบับสมบูรณ์ด้านล่างนี้
 
 
-🔗 [Read Full Technical Report](https://github.com/sukritmrk/Portfolio/blob/main/docs/Report/__Main%20Content.md](https://github.com/sukritmrk/Portfolio/tree/main/docs/Report))
+🔗 [Read Full Technical Report](https://github.com/sukritmrk/Portfolio/tree/main/docs/Report)
+🔗 [View Proof-of-Concept Source code](https://github.com/sukritmrk/Portfolio/tree/main/src)
